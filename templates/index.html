@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="{{ url_for ( 'static', filename = 'assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for ( 'static', filename = 'assets/css/Lora.css')}}">
+    <link rel="stylesheet" href="{{ url_for ( 'static', filename = 'assets/css/Raleway.css')}}">
+    <link rel="stylesheet" href="{{ url_for ( 'static', filename = 'assets/css/aos.min.css')}}">
+</head>
+
+<body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('{{ url_for ( 'static', filename = 'assets/img/bg.jpg')}}');">
+    <h2 class="text-center text-white d-none d-lg-block site-heading"><span data-aos="fade-up" data-aos-duration="400" data-aos-delay="100" class="site-heading-lower"><sup>shreya hearing clinic</sup></span></h2>
+    <section class="page-section clearfix">
+        <div class="container">
+            <div class="intro"><img class="img-fluid intro-img mb-3 mb-lg-0 rounded" data-aos="fade-up" data-aos-duration="300" data-aos-delay="100" src="{{ url_for ( 'static', filename = 'assets/img/intro.jpg')}}">
+                <div class="text-center intro-text p-5 rounded bg-faded" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="section-heading mb-4">
+                        <span data-aos="fade-up" data-aos-duration="100" data-aos-delay="300" class="section-heading-upper">
+                        
+                            {{ datetoday }}
+                        
+                        
+                        </span>
+                        <span data-aos="fade-up" data-aos-duration="100" data-aos-delay="300" class="section-heading-lower">
+                            {% if name %}
+                                {{ name }}
+                            {% else %}
+                                Birth day wish
+                            {% endif %}
+                        
+                        </span>
+                    </h2>
+                    <p data-aos="fade-up" data-aos-duration="150" data-aos-delay="300" class="mb-3">
+                        {% if message %}
+                            {{ message }}
+                        {% else %}
+                            Go down enter the details for the clients Birth day wish
+                        {% endif %}
+                        
+                    </p>
+                    <div class="mx-auto intro-button"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="text-center cta-inner rounded">
+                        <h2 class="section-heading mb-4"><span class="section-heading-lower">Enter the details for next wish</span></h2>
+                        <section class="position-relative py-4 py-xl-5">
+                            <div class="container position-relative">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-md-8 col-lg-8 col-xl-5 col-xxl-4">
+                                        <div class="card mb-5">
+                                            <div class="card-body p-sm-5">
+                                                <form action="{{ url_for ('home') }}" method="post">
+                                                    <div class="mb-3"><input class="form-control" type="text" id="name-2" name="name" placeholder="Name" style="font-family: Lora, serif;" required></div>
+                                                    <div class="mb-3"><input class="form-control" type="date" name="date" style="font-family: Lora, serif;" required></div>
+                                                    <div class="mb-3"><textarea class="form-control" id="message-2" name="message" rows="6" placeholder="Message" required></textarea></div>
+                                                    <div><button class="btn btn-primary d-block w-100" type="submit">Send </button></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center footer text-faded py-5">
+        <div class="container">
+            
+            <p class="m-0 small">Developed by&nbsp;© Maripandi P for <a href="https://shreyahearingclinic.com/" role="button">shreyahearingclinic</a></p>
+        </div>
+    </footer>
+    <script src="{{ url_for ( 'static', filename = 'assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for ( 'static', filename = 'assets/js/aos.min.js')}}"></script>
+    <script src="{{ url_for ( 'static', filename = 'assets/js/bs-init.js')}}"></script>
+    <script src="{{ url_for ( 'static', filename = 'assets/js/current-day.js')}}"></script>
+</body>
+
+</html>
